@@ -1,2 +1,2 @@
 # 2DShooterGame
-School assignment
+School assignment for Future Games
