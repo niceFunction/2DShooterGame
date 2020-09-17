@@ -45,5 +45,10 @@ namespace SE
             _bomberBody.MovePosition((Vector2)transform.position + 
                 (direction * bomberSpeed * Time.deltaTime));
         }
+
+        public void DestroyBomber()
+        {
+            Destroy(gameObject);
+        }
     }
 }

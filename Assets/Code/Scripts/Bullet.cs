@@ -2,16 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+
+namespace SE
 {
-
-    private void Update()
+    public class Bullet : MonoBehaviour
     {
-        Destroy(gameObject, 5f);
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Destroy(gameObject, 5f);
+        private void Start()
+        {
+
+        }
+
+        private void Update()
+        {
+            Destroy(gameObject, 5f);
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+
+        }
+
+        private void OnTriggerEnter2D(Collider2D hitInfo)
+        {
+            SE.Bomber enemy = hitInfo.GetComponent<SE.Bomber>();
+            if (enemy != null)
+            {
+                Debug.Log("Hit Enemy Bomber");
+                enemy.DestroyBomber();
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
