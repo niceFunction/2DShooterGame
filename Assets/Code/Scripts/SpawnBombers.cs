@@ -26,7 +26,7 @@ namespace SE
                 5. NOT NECESSARY: When enemy is within a certain distance from player, increase speed
                 6. NOT NECESSARY: Additionally, make the enemy explode with X seconds
             */
-
+            /*
             _bombers = new Bomber[spawnCount];
             for (int i = 0; i < spawnCount; i++)
             {
@@ -35,7 +35,9 @@ namespace SE
                 _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                 _bombers[i].playerTarget = playerInput.transform;
             }
-            Debug.Break();
+            */
+            //Debug.Break();
+            CreateBombers();
         }
 
         // Update is called once per frame
