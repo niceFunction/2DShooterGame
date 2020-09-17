@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTarget: {fileID: 1926465507}
   smoothTime: 0.055
-  offset: {x: 0, y: 0, z: -40}
+  offset: {x: 0, y: 0, z: -30}
 --- !u!4 &1926465507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4033303259655393084, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}

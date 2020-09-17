@@ -10,6 +10,8 @@ namespace SE
         [Range(1f, 100f)]
         public float bomberSpeed = 5f;
 
+        public GameObject bomberExplosionEffect;
+
         private Rigidbody2D _bomberBody;
         private Vector2 _bomberMovement;
 
@@ -48,6 +50,8 @@ namespace SE
 
         public void DestroyBomber()
         {
+            GameObject explosionEffect = Instantiate(bomberExplosionEffect, transform.position, Quaternion.identity);
+            Destroy(explosionEffect, 1f);
             Destroy(gameObject);
         }
     }
