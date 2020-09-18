@@ -34,6 +34,8 @@ public class PhaseShift : MonoBehaviour
     /// </summary>
     public void ShiftChange()
     {
+        //TODO Set the PhaseShift color changes in the other objects & "call" on them from here
+
         if (shiftPhase == 0)
         {
             // "Light" colors

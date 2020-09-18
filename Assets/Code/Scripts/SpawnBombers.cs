@@ -6,6 +6,9 @@ namespace SE
 {
     public class SpawnBombers : MonoBehaviour
     {
+        //TODO add PhaseShift on everything that's going to change color: Player, Bomber, Bullet, Camera
+        //TODO Call on PhaseShift from here (SpawnBombers)
+
         [Header("Player")]
         public Bomber bomber;
         public PlayerInput playerInput;
