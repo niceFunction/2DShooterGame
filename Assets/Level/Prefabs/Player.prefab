@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8520751866115201089}
   - component: {fileID: 4033303259655393082}
   - component: {fileID: 4033303259655393085}
+  - component: {fileID: 4822235752362723939}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802b9268894ab0c4c99beaa3cd5a5c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phaseShift: {fileID: 0}
   maxSpeed: 14
   acceleration: 5.65
   deceleration: 0
@@ -148,6 +150,31 @@ MonoBehaviour:
   weaponPoint: {fileID: 4033303257729554372}
   bulletPrefab: {fileID: 1681021466724683704, guid: e2698608f074f0d4cb4914054b8bdd95, type: 3}
   bulletForce: 40
+--- !u!114 &4822235752362723939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4033303259655393081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe7d0146013899438dac0f41e116011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shiftPhase: 0
+  colorObjects:
+    player: {fileID: 4033303259662932125}
+    bullet: {fileID: 1681021466724683704, guid: e2698608f074f0d4cb4914054b8bdd95, type: 3}
+    lightPlayerColor: {r: 0.20784314, g: 0.23137255, b: 0.28235295, a: 0}
+    darkPlayerColor: {r: 0.8627451, g: 0.8666667, b: 0.88235295, a: 0}
+    bomber: {fileID: 7786880072926649706, guid: 7be1564b8facfa941a16d0a4dcd6eb75, type: 3}
+    lightBomberColor: {r: 0.29411766, g: 0.8117647, b: 0.98039216, a: 0}
+    darkBomberColor: {r: 1, g: 0.36862746, b: 0.34117648, a: 0}
+    camera: {fileID: 9209150976334457947, guid: 19d565703c994754498571a1de4bf720, type: 3}
+    lightCameraColor: {r: 0.8627451, g: 0.8666667, b: 0.88235295, a: 0}
+    darkCameraColor: {r: 0.20784314, g: 0.23137255, b: 0.28235295, a: 0}
+  transparentEnemyAlpha: 0
 --- !u!1 &4033303259662932123
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ namespace SE
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerInput : MonoBehaviour
     {
+        public PhaseShift phaseShift;
+
         public float maxSpeed;
 
         public float acceleration;
@@ -27,11 +29,29 @@ namespace SE
         private void Awake()
         {
             _shipBody = GetComponent<Rigidbody2D>();
+            phaseShift = GetComponent<PhaseShift>();
+        }
+
+        private void Start()
+        {
+            //phaseShift.shiftColor = 0;
         }
 
         private void Update()
         {
+            
             _shipInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            if (Input.GetButtonDown("Shift"))
+            {
+                if(phaseShift.shiftPhase == 0)
+                {
+                    phaseShift.shiftPhase = 1;
+                }
+                else
+                {
+                    phaseShift.shiftPhase = 0;
+                }
+            }
         }
 
         // Update is called once per frame
