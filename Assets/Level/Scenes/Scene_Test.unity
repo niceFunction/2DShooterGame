@@ -166,8 +166,10 @@ MonoBehaviour:
   bomber: {fileID: 7786880072926649702, guid: 7be1564b8facfa941a16d0a4dcd6eb75, type: 3}
   playerInput: {fileID: 307162676}
   camera: {fileID: 1607645718}
-  spawnCount: 183
-  padding: 10
+  padding: 15
+  _initialSpawnAmount: 50
+  _spawnTimer: 10
+  _spawnAmount: 10
 --- !u!4 &1238354347
 Transform:
   m_ObjectHideFlags: 0
@@ -297,7 +299,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 40
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -341,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTarget: {fileID: 1926465507}
   smoothTime: 0.055
-  offset: {x: 0, y: 0, z: -30}
+  offset: {x: 0, y: 0, z: -40}
 --- !u!4 &1926465507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4033303259655393084, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}

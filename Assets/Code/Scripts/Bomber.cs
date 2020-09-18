@@ -53,6 +53,7 @@ namespace SE
             GameObject explosionEffect = Instantiate(bomberExplosionEffect, transform.position, Quaternion.identity);
             Destroy(explosionEffect, 1f);
             Destroy(gameObject);
+            SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
         }
     }
 }
