@@ -28,7 +28,7 @@ namespace SE
             SE.Bomber enemy = hitInfo.GetComponent<SE.Bomber>();
             if (enemy != null)
             {
-                //Debug.Log("Hit Enemy Bomber");
+                Debug.Log("Hit Enemy Bomber");
                 enemy.DestroyBomber();
                 Destroy(this.gameObject);
             }

@@ -43,15 +43,14 @@ namespace SE
             _shipInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (Input.GetButtonDown("Shift"))
             {
-                if(GameManager.Instance.shiftPhase == 0)
-                {
-                    GameManager.Instance.shiftPhase = 1;
-                }
-                else
-                {
-                    GameManager.Instance.shiftPhase = 0;
-                }  
+                GameManager.Instance.UpdatePhase();
             }
+
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shooting.Instance.BulletFired();
+            }
+
         }
 
         // Update is called once per frame

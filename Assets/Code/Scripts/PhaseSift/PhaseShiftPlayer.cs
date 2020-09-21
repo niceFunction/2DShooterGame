@@ -12,6 +12,7 @@ namespace SE
 
         //public SE.Colors.Objects colorObjects;
         public SpriteRenderer playerTarget;
+        public SE.Bullet bulletTarget;
         //public SpriteRenderer bullet;
         public Color lightTargetColor;
         public Color darkTargetColor;
@@ -55,11 +56,11 @@ namespace SE
         /// <summary>
         /// "Shifts" between colors
         /// </summary>
-        public void ShiftChange()
+        public void PlayerShiftChange()
         {
             //TODO Set the PhaseShift color changes in the other objects & "call" on them from here
 
-            if (shiftPhase == 0)
+            if (GameManager.Instance.shiftPhase == 0)
             {
                 // "Light" colors
                 Debug.Log("PhaseShift: " + playerTarget + "light");
@@ -71,7 +72,7 @@ namespace SE
                 // Use "Dark" color for Bomber here
                 //colorObjects.bomber.color = colorObjects.darkBomberColor;
             }
-            else if (shiftPhase == 1)
+            else if (GameManager.Instance.shiftPhase == 1)
             {
                 // "Dark" colors
                 Debug.Log("PhaseShift: " + playerTarget + "light");

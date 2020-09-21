@@ -11,21 +11,37 @@ namespace SE
 
         public float bulletForce = 20f;
 
-        // Update is called once per frame
-        void Update()
-        {
-            FireWeapon();
-        }
+        public static Shooting Instance { get; private set; }
 
-        private void FireWeapon()
+        private void Awake()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Instance == null)
             {
-                BulletFired();
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
             }
         }
 
-        private void BulletFired()
+        // Update is called once per frame
+        void Update()
+        {
+            //FireWeapon();
+            //BulletFired();
+        }
+
+        public void FireWeapon()
+        {
+            //if (Input.GetButtonDown("Fire1"))
+            //{
+                BulletFired();
+            //}
+        }
+
+        public void BulletFired()
         {
            GameObject bullet = Instantiate(bulletPrefab, weaponPoint.position, weaponPoint.rotation);
 

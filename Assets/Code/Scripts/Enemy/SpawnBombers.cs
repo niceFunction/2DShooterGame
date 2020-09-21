@@ -13,7 +13,7 @@ namespace SE
         [Header("Player")]
         public Bomber bomber;
         public PlayerInput playerInput;
-        public Camera camera;
+        public Camera playerCamera;
         //[Range(1, 1000)]
         //public int spawnCount;
         public float padding;
@@ -37,6 +37,7 @@ namespace SE
 
         private void Awake()
         {
+            
             if (Instance == null)
             {
                 Instance = this;
@@ -46,6 +47,7 @@ namespace SE
                 Destroy(gameObject);
                 return;
             }
+            
         }
 
         // Start is called before the first frame update
@@ -53,10 +55,7 @@ namespace SE
         {
             /*
                 DESIGN BOMBER SPAWNING SYSTEM
-                1. Start game by spawning a x number of enemies
-                2. Spawn an additional enemy after x seconds
                 3. Limit amount of certain enemy types on screen
-                4. Spawn a new enemy after an old enemy has died
                 5. NOT NECESSARY: When enemy is within a certain distance from player, increase speed
                 6. NOT NECESSARY: Additionally, make the enemy explode with X seconds
             */
@@ -162,7 +161,7 @@ namespace SE
                     break;
             }
 
-            position = camera.ScreenToWorldPoint(position);
+            position = playerCamera.ScreenToWorldPoint(position);
 
             return position;
         }

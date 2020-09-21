@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     public int shiftPhase = 0;
 
     public SE.PlayerInput player;
-    public Camera mainCamera;
+    //public Camera mainCamera;
 
-    [SerializeField] private SE.PhaseShiftPlayer _phaseShiftPlayer;
+    //[SerializeField] private SE.PhaseShiftPlayer _phaseShiftPlayer;
     //[SerializeField] private SE.PhaseShiftBullet _phaseShiftBullet;
     //[SerializeField] private SE.PhaseShiftCamera _phaseShiftCamera;
+    public SE.Bullet bullet;
+    public Camera playerCamera;
 
     public static GameManager Instance {get; private set;}
 
@@ -43,27 +45,37 @@ public class GameManager : MonoBehaviour
         ShiftChange();
     }
 
-    public void ShiftChange()
+    public void UpdatePhase()
     {
-        //GameManager.Instance.ShiftChange();
-        SE.PhaseShiftPlayer playerColor = GetComponent<SE.PhaseShiftPlayer>();
         if (shiftPhase == 0)
         {
             Debug.Log("PhaseShift: " + shiftPhase + " light");
-            
+            shiftPhase = 1;
+        }
+        else
+        {
+            Debug.Log("PhaseShift: " + shiftPhase + " dark");
+            shiftPhase = 0;
+        }
+    }
 
-            playerColor.GetComponentInChildren<SpriteRenderer>().color = SE.PhaseShiftPlayer.Instance.lightTargetColor;
-            //SE.PhaseShiftPlayer.Instance.lightTargetColor;
-            //mainCamera.backgroundColor = SE.PhaseShiftCamera.Instance.lightTargetColor;
-            //_phaseShiftCamera.targetCamera.backgroundColor = SE.PhaseShiftCamera.Instance.lightTargetColor;
+    public void ShiftChange()
+    {
+        SE.PhaseShiftCamera.Instance.CameraShiftChange();
+        //SE.PhaseShiftBullet.Instance.bulletTarget.color = SE.PhaseShiftBullet.Instance.lightTargetColor;
+
+        /*
+        if (shiftPhase == 0)
+        {
+            Debug.Log("PhaseShift: " + shiftPhase + " light");
+
         }
         else if (shiftPhase == 1)
         {
             Debug.Log("PhaseShift: " + shiftPhase + " dark");
-            playerColor.GetComponentInChildren<SpriteRenderer>().color = SE.PhaseShiftPlayer.Instance.darkTargetColor;
-            //_phaseShiftCamera.targetCamera.backgroundColor = SE.PhaseShiftCamera.Instance.darkTargetColor;
-            //mainCamera.backgroundColor = SE.PhaseShiftCamera.Instance.darkTargetColor;
+
         }
+        */
         
     }
 

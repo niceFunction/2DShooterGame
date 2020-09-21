@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a9de75d92eb7249a20c634e3060e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
+  followTarget: {fileID: 9209150976334457946}
   smoothTime: 0.055
   offset: {x: 0, y: 0, z: -40}
 --- !u!114 &5261051468258610863
@@ -112,7 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a4aebefb76d394e86d11045a37af81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shiftPhase: 0
-  targetCamera: {fileID: 9209150976334457947}
   lightTargetColor: {r: 0.78431374, g: 0.8392157, b: 0.8980392, a: 0}
   darkTargetColor: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 0}

@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomber: {fileID: 7786880072926649702, guid: 7be1564b8facfa941a16d0a4dcd6eb75, type: 3}
   playerInput: {fileID: 307162676}
-  camera: {fileID: 1607645718}
+  playerCamera: {fileID: 1607645718}
   padding: 15
   _initialSpawnAmount: 50
   _spawnTimer: 10
@@ -213,6 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a73be4dc088487448a214010edabb26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shiftPhase: 0
+  player: {fileID: 0}
+  bullet: {fileID: -2278543281943036965, guid: e2698608f074f0d4cb4914054b8bdd95, type: 3}
+  playerCamera: {fileID: 1607645718}
 --- !u!4 &1401006796
 Transform:
   m_ObjectHideFlags: 0
