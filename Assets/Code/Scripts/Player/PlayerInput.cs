@@ -8,7 +8,7 @@ namespace SE
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerInput : MonoBehaviour
     {
-        public PhaseShift phaseShift;
+        //public PhaseShift phaseShift;
 
         public float maxSpeed;
 
@@ -29,7 +29,7 @@ namespace SE
         private void Awake()
         {
             _shipBody = GetComponent<Rigidbody2D>();
-            phaseShift = GetComponent<PhaseShift>();
+            //phaseShift = GetComponent<PhaseShift>();
         }
 
         private void Start()
@@ -43,14 +43,14 @@ namespace SE
             _shipInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (Input.GetButtonDown("Shift"))
             {
-                if(phaseShift.shiftPhase == 0)
+                if(GameManager.Instance.shiftPhase == 0)
                 {
-                    phaseShift.shiftPhase = 1;
+                    GameManager.Instance.shiftPhase = 1;
                 }
                 else
                 {
-                    phaseShift.shiftPhase = 0;
-                }
+                    GameManager.Instance.shiftPhase = 0;
+                }  
             }
         }
 

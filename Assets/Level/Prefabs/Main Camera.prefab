@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9209150976334457947}
   - component: {fileID: 9209150976334457944}
   - component: {fileID: 9209150976334457941}
+  - component: {fileID: 5261051468258610863}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -99,3 +100,19 @@ MonoBehaviour:
   followTarget: {fileID: 0}
   smoothTime: 0.055
   offset: {x: 0, y: 0, z: -40}
+--- !u!114 &5261051468258610863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209150976334457945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a4aebefb76d394e86d11045a37af81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shiftPhase: 0
+  targetCamera: {fileID: 9209150976334457947}
+  lightTargetColor: {r: 0.78431374, g: 0.8392157, b: 0.8980392, a: 0}
+  darkTargetColor: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 0}

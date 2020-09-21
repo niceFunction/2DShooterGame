@@ -6,6 +6,7 @@ namespace SE
 {
     public class SpawnBombers : MonoBehaviour
     {
+
         //TODO add PhaseShift on everything that's going to change color: Player, Bomber, Bullet, Camera
         //TODO Call on PhaseShift from here (SpawnBombers)
 
@@ -115,8 +116,6 @@ namespace SE
                 {
                     //TODO consider if new Bombers should spawn a single or multiple Bomber(s)
                     var position = GetRandomOffScreenPosition();
-                    //Instantiate(bomber, position, Quaternion.identity);
-                    //bomber.playerTarget = playerInput.transform;
                     _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                     _bombers[i].playerTarget = playerInput.transform;
                     Debug.Log("SPAWNED: " + i + " BOMBERS");
@@ -127,33 +126,6 @@ namespace SE
             yield return new WaitForSeconds(_spawnTimer);
         }
 
-        /// <summary>
-        /// Spawns Bomber(s) over time
-        /// </summary>
-        /*
-        public void SpawnBombersOverTime()
-        {
-
-            _spawnTimer = _spawnTimer - Time.deltaTime;
-
-            if (_spawnTimer <= 0)
-            {
-                Debug.Log("SPAWNTIMER REACHED 0!");
-                _bombers = new Bomber[_spawnAmount];
-                for (int i = 0; i < Random.Range(0, _spawnAmount); i++)
-                {
-                    //TODO consider if new Bombers should spawn a single or multiple Bomber(s)
-                    var position = GetRandomOffScreenPosition();
-                    //Instantiate(bomber, position, Quaternion.identity);
-                    //bomber.playerTarget = playerInput.transform;
-                    _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
-                    _bombers[i].playerTarget = playerInput.transform;
-                    Debug.Log("SPAWNED: " + i + " BOMBERS");
-                    _spawnTimer = _resetSpawnTimer;
-                }
-            }
-        }
-*/
         /// <summary>
         /// Get position(s) outside of the viewable screen
         /// </summary>

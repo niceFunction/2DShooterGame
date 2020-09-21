@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6372478744448831645}
   - component: {fileID: 8539611557363479505}
   - component: {fileID: -2278543281943036965}
+  - component: {fileID: 6275172339833499490}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -94,7 +95,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384ef73e5541fef4aa3a292414c9b680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDestroy: {fileID: 7786880072926649706, guid: 7be1564b8facfa941a16d0a4dcd6eb75, type: 3}
+--- !u!114 &6275172339833499490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681021466724683704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b137fba14cbb4448b8ea4710856f60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shiftPhase: 0
+  bulletTarget: {fileID: 6243808487056018485}
+  lightTargetColor: {r: 0.78431374, g: 0.8392157, b: 0.8980392, a: 0}
+  darkTargetColor: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 0}
 --- !u!1 &5768548544782958514
 GameObject:
   m_ObjectHideFlags: 0
