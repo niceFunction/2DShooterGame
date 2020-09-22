@@ -78,9 +78,6 @@ namespace SE
                 Debug.Log("COROUTINE STOPPED");
                 StopCoroutine(SpawnBombersOverTime());
             }
-
-
-
         }
 
         private void OnGUI()
