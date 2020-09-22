@@ -53,7 +53,7 @@ namespace SE
         {
             /*
                 DESIGN BOMBER SPAWNING SYSTEM
-                3. Limit amount of certain enemy types on screen
+                3. SOLVED (kinda?)Limit amount of certain enemy types on screen
                 5. NOT NECESSARY: When enemy is within a certain distance from player, increase speed
                 6. NOT NECESSARY: Additionally, make the enemy explode with X seconds
             */
@@ -68,8 +68,19 @@ namespace SE
             //SpawnBombersOverTime();
 
             SetBomberPhase();
-            StartCoroutine(SpawnBombersOverTime());
-            
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
+            {
+                Debug.Log("COROUTINE STARTED");
+                StartCoroutine(SpawnBombersOverTime());
+            }
+            else if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
+            {
+                Debug.Log("COROUTINE STOPPED");
+                StopCoroutine(SpawnBombersOverTime());
+            }
+
+
+
         }
 
         private void OnGUI()
