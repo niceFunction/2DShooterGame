@@ -28,15 +28,6 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        SE.Bomber enemy = hitInfo.GetComponent<SE.Bomber>();
-        if (enemy != null)
-        {
-            Debug.Log("Player Hit!");
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D hitInfo)
     {
         SE.Bomber enemy = hitInfo.gameObject.GetComponent<SE.Bomber>();
