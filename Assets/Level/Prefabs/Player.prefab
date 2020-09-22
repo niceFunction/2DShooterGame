@@ -162,9 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shiftPhase: 0
-  target: {fileID: 4033303259662932125}
-  lightTargetColor: {r: 0.78431374, g: 0.8392157, b: 0.8980392, a: 0}
-  darkTargetColor: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 0}
+  playerTarget: {fileID: 4033303259662932125}
+  bulletTarget: {fileID: 0}
+  lightTargetColor: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 1}
+  darkTargetColor: {r: 0.78431374, g: 0.8392157, b: 0.8980392, a: 1}
 --- !u!1 &4033303259662932123
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +238,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 94d0bcc890950b94aaba7c94ce4dc372, type: 3}
-  m_Color: {r: 0.69803923, g: 0.74509805, b: 0.7647059, a: 1}
+  m_Color: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

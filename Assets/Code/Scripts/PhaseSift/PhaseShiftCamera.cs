@@ -8,6 +8,8 @@ namespace SE
 
     public class PhaseShiftCamera : MonoBehaviour
     {
+        public Camera playerCamera;
+
         public Color lightTargetColor;
         public Color darkTargetColor;
 
@@ -19,23 +21,10 @@ namespace SE
             
         }
 
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-        }
-
         // Update is called once per frame
         void Update()
         {
-
+            CameraShiftChange();
         }
 
         /// <summary>
@@ -45,15 +34,15 @@ namespace SE
         {
             //TODO Set the PhaseShift color changes in the other objects & "call" on them from here
 
-            if (GameManager.Instance.shiftPhase == 0)
+            if (SE.GameManager.Instance.shiftPhase == 0)
             {
                 // "Light" colors
-                GameManager.Instance.playerCamera.backgroundColor = lightTargetColor;
+                playerCamera.backgroundColor = darkTargetColor;    
             }
-            else if (GameManager.Instance.shiftPhase == 1)
+            else if (SE.GameManager.Instance.shiftPhase == 1)
             {
                 // "Dark" colors
-                GameManager.Instance.playerCamera.backgroundColor = darkTargetColor;
+                playerCamera.backgroundColor = lightTargetColor;
             }
         }
     }

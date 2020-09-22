@@ -37,8 +37,9 @@ namespace SE
         {
             //if (Input.GetButtonDown("Fire1"))
             //{
-                BulletFired();
+
             //}
+            BulletFired();
         }
 
         public void BulletFired()

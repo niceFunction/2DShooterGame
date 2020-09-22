@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &113661773 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4033303259662932125, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+  m_PrefabInstance: {fileID: 1444507743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &307162676 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4033303259655393082, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
@@ -214,8 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shiftPhase: 0
-  player: {fileID: 0}
-  bullet: {fileID: -2278543281943036965, guid: e2698608f074f0d4cb4914054b8bdd95, type: 3}
+  playerSprite: {fileID: 113661773}
   playerCamera: {fileID: 1607645718}
 --- !u!4 &1401006796
 Transform:
@@ -294,6 +298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4033303259662932125, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
       propertyPath: shiftColor
       value: 0
@@ -329,6 +337,34 @@ PrefabInstance:
     - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
       propertyPath: colorObjects.lightBomberColor.b
       value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: playerTarget
+      value: 
+      objectReference: {fileID: 113661773}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: lightTargetColor.r
+      value: 0.13333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: lightTargetColor.g
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: lightTargetColor.b
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: darkTargetColor.r
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: darkTargetColor.g
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822235752362723939, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+      propertyPath: darkTargetColor.b
+      value: 0.8980392
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
@@ -440,6 +476,10 @@ PrefabInstance:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 1926465507}
+    - target: {fileID: 9209150976334457941, guid: 19d565703c994754498571a1de4bf720, type: 3}
+      propertyPath: offset.z
+      value: -35
+      objectReference: {fileID: 0}
     - target: {fileID: 9209150976334457945, guid: 19d565703c994754498571a1de4bf720, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -487,6 +527,10 @@ PrefabInstance:
     - target: {fileID: 9209150976334457946, guid: 19d565703c994754498571a1de4bf720, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209150976334457947, guid: 19d565703c994754498571a1de4bf720, type: 3}
+      propertyPath: orthographic size
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19d565703c994754498571a1de4bf720, type: 3}
