@@ -99,6 +99,10 @@ namespace SE
 
                 _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                 _bombers[i].playerTarget = playerInput.transform;
+                
+                //TODO add this to other places where you create Bombers
+                var phaseShift = _bombers[i].GetComponent<PhaseShiftEnemy>();
+                phaseShift.RandomPhase();
             }
         }
 
@@ -124,7 +128,7 @@ namespace SE
 
             if (_spawnTimer <= 0)
             {
-                Debug.Log("SPAWNTIMER REACHED 0!");
+                //Debug.Log("SPAWNTIMER REACHED 0!");
                 _bombers = new Bomber[_spawnAmount];
                 for (int i = 0; i < Random.Range(0, _spawnAmount); i++)
                 {
@@ -132,7 +136,7 @@ namespace SE
                     var position = GetRandomOffScreenPosition();
                     _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                     _bombers[i].playerTarget = playerInput.transform;
-                    Debug.Log("SPAWNED: " + i + " BOMBERS");
+                    //Debug.Log("SPAWNED: " + i + " BOMBERS");
                     _spawnTimer = _resetSpawnTimer;
                 }
             }
@@ -146,7 +150,7 @@ namespace SE
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {
-                Debug.Log("ABOVE MAXIMUM ALLOWED BOMBERS!");
+                //Debug.Log("ABOVE MAXIMUM ALLOWED BOMBERS!");
 
                 //Destroy(bomber);
             }

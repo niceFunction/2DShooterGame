@@ -22,6 +22,10 @@ namespace SE
             
         }
 
+        //TODO What's the transparency? here
+        //TODO Randomize spawn color
+
+
         // Update is called once per frame
         void Update()
         {
