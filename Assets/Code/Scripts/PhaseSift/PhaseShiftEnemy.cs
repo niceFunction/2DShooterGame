@@ -8,8 +8,10 @@ namespace SE
     {
 
         public SpriteRenderer enemyTarget;
-        public Color solidColor; //light
-        public Color transparentColor; // dark
+        //TODO reminder: Have 2 sets of solid/transparent colors & then choose between them
+        //TODO Followup reminder: Meaning, Bombers "chooses" between the 2 (ex: blue or red) & then sets their transparency afterwards
+        public Color solidColor;
+        public Color transparentColor;
 
         [SerializeField] private int transparentLayer;
         [SerializeField] private int solidLayer;
