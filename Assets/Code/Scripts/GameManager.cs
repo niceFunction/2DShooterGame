@@ -6,8 +6,8 @@ namespace SE
 {
     public class GameManager : MonoBehaviour
     {
-        [HideInInspector]
-        public int shiftPhase = 0;
+        [HideInInspector] public int shiftPhase = 0;
+        [HideInInspector] public int enemyShiftPhase;
 
         public SpriteRenderer playerSprite;
         public Camera playerCamera;
@@ -17,7 +17,7 @@ namespace SE
         // Start is called before the first frame update
         void Start()
         {
-
+            
         }
 
         private void Awake()
@@ -36,7 +36,7 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-
+            //Debug.Log(enemyShiftPhase);
         }
 
         /// <summary>
@@ -46,12 +46,12 @@ namespace SE
         {
             if (shiftPhase == 0)
             {
-                Debug.Log("PhaseShift: " + shiftPhase + " light");
+                //Debug.Log("PhaseShift: " + shiftPhase + " light");
                 shiftPhase = 1;
             }
             else
             {
-                Debug.Log("PhaseShift: " + shiftPhase + " dark");
+                //Debug.Log("PhaseShift: " + shiftPhase + " dark");
                 shiftPhase = 0;
             }
         }

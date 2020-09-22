@@ -9,7 +9,6 @@ namespace SE
     {
 
         public SpriteRenderer playerTarget;
-        public SE.Bullet bulletTarget;
         public Color lightTargetColor;
         public Color darkTargetColor;
 

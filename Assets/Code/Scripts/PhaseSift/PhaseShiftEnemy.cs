@@ -10,9 +10,7 @@ namespace SE
         public SpriteRenderer enemyTarget;
         public Color lightTargetColor;
         public Color darkTargetColor;
-
-        [Range(0, 1)]
-        public float transparentEnemyAlpha;
+        [Range(0, 1)] public float transparentEnemyAlpha;
         private float _solidAlpha = 1;
 
         // Update is called once per frame
@@ -26,12 +24,14 @@ namespace SE
         /// </summary>
         public void EnemyShiftChange()
         {
-            if (SE.GameManager.Instance.shiftPhase == 0)
+            //GameManager.Instance.enemyShiftPhase = Random.Range();
+
+            if (SE.GameManager.Instance.enemyShiftPhase == 0)
             {
                 // Use "Light" colors
                 enemyTarget.color = darkTargetColor;
             }
-            else if (SE.GameManager.Instance.shiftPhase == 1)
+            else if (SE.GameManager.Instance.enemyShiftPhase == 1)
             {
                 // "Dark" colors
                 enemyTarget.color = lightTargetColor;

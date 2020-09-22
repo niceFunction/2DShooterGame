@@ -19,6 +19,7 @@ namespace SE
         void Start()
         {
             _bomberBody = GetComponent<Rigidbody2D>();
+            
         }
 
         // Update is called once per frame

@@ -10,8 +10,6 @@ namespace SE
     public class PhaseShiftBullet : MonoBehaviour
     {
         public SpriteRenderer bulletTarget;
-        public Color lightTargetColor;
-        public Color darkTargetColor;
 
         // Update is called once per frame
         void Update()

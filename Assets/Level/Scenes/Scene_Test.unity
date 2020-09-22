@@ -174,7 +174,8 @@ MonoBehaviour:
   padding: 15
   _initialSpawnAmount: 50
   _spawnTimer: 10
-  _spawnAmount: 25
+  _spawnAmount: 10
+  _maximumSpawnAmount: 60
 --- !u!4 &1238354347
 Transform:
   m_ObjectHideFlags: 0
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shiftPhase: 0
+  enemyShiftPhase: 0
   playerSprite: {fileID: 113661773}
   playerCamera: {fileID: 1607645718}
 --- !u!4 &1401006796

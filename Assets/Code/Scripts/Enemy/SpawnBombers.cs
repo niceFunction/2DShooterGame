@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace SE
@@ -10,12 +11,11 @@ namespace SE
         //TODO add PhaseShift on everything that's going to change color: Player, Bomber, Bullet, Camera
         //TODO Call on PhaseShift from here (SpawnBombers)
 
-        [Header("Player")]
+        [Header("Enemy Bomber")]
         public Bomber bomber;
+        [Header("Player")]
         public PlayerInput playerInput;
         public Camera playerCamera;
-        //[Range(1, 1000)]
-        //public int spawnCount;
         public float padding;
 
         [SerializeField, Tooltip("How many Bombers will spawn at the Start?"), Range(1, 100), Header("Bomber")]
@@ -25,19 +25,18 @@ namespace SE
         [SerializeField, Tooltip("When 'Spawn Timer' has reached 0,\n " +
             "'what's the maximum allowed Bombers that can spawn?"), Range(1, 25)]
         private int _spawnAmount;
+        [SerializeField, Tooltip("Maximum amount of 'Bombers' allowed"), Range(1, 100)]
+        private int _maximumSpawnAmount;
 
         private float _resetSpawnTimer;
         private float _spawnChance;
         private float _spawnChanceValue = 0.2f;
         private Bomber[] _bombers;
 
-        private IEnumerator _coroutine;
-
         public static SpawnBombers Instance { get; private set; }
 
         private void Awake()
         {
-            
             if (Instance == null)
             {
                 Instance = this;
@@ -47,7 +46,6 @@ namespace SE
                 Destroy(gameObject);
                 return;
             }
-            
         }
 
         // Start is called before the first frame update
@@ -68,7 +66,17 @@ namespace SE
         void Update()
         {
             //SpawnBombersOverTime();
+
+            SetBomberPhase();
             StartCoroutine(SpawnBombersOverTime());
+            
+        }
+
+        private void OnGUI()
+        {
+            #if UNITY_EDITOR
+            GUILayout.Label("Bomber length: " + GameObject.FindGameObjectsWithTag("Enemy").Length);
+            #endif
         }
 
         /// <summary>
@@ -96,7 +104,6 @@ namespace SE
             // Makes it so that Bombers don't spawn every single time
             if (_spawnChance < _spawnChanceValue)
             {
-                Debug.Log("A BOMBER DIED, NEW BOMBER SPAWNED!");
                 var position = GetRandomOffScreenPosition();
                 Instantiate(bomber, position, Quaternion.identity);
                 bomber.playerTarget = playerInput.transform;
@@ -121,8 +128,20 @@ namespace SE
                     _spawnTimer = _resetSpawnTimer;
                 }
             }
-
             yield return new WaitForSeconds(_spawnTimer);
+        }
+
+        /// <summary>
+        /// Decide what "phase" Bombers spawn in as
+        /// </summary>
+        private void SetBomberPhase()
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
+            {
+                Debug.Log("ABOVE MAXIMUM ALLOWED BOMBERS!");
+
+                //Destroy(bomber);
+            }
         }
 
         /// <summary>
@@ -162,7 +181,6 @@ namespace SE
             }
 
             position = playerCamera.ScreenToWorldPoint(position);
-
             return position;
         }
     }
