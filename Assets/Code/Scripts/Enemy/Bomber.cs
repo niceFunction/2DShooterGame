@@ -57,8 +57,11 @@ namespace SE
         {
             GameObject explosionEffect = Instantiate(bomberExplosionEffect, transform.position, Quaternion.identity);
             Destroy(explosionEffect, 1f);
+
+            FindObjectOfType<AudioManager>().Play("EnemyExplosion");
+
             Destroy(gameObject);
-            SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
+            //SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
         }
     }
 }

@@ -4,3 +4,6 @@ A mechanic by pressing space bar:
 3. The Player can change "color/phase/reality" by pressing space.
 4. By pressing Space, the transparent enemies become "physical" & the "physical" enmemies become transparent
 5. By pressing Space, the Player changes color that fits (as well as the projectile changes color to match)
+
+2D Animation in Unity (Brackeys)
+https://www.youtube.com/watch?v=hkaysu1Z-N8&t=1029s

@@ -65,18 +65,21 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            //SpawnBombersOverTime();
+            //LimitBombers(); //TODO Find a way where you can remove Bombers without issues
 
-            SetBomberPhase();
             if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
             {
+                /*
                 Debug.Log("COROUTINE STARTED");
                 StartCoroutine(SpawnBombersOverTime());
+                */
             }
             else if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {
+                /*
                 Debug.Log("COROUTINE STOPPED");
                 StopCoroutine(SpawnBombersOverTime());
+                */
             }
         }
 
@@ -103,6 +106,7 @@ namespace SE
                 //TODO add this to other places where you create Bombers
                 var phaseShift = _bombers[i].GetComponent<PhaseShiftEnemy>();
                 phaseShift.RandomPhase();
+
             }
         }
 
@@ -119,6 +123,9 @@ namespace SE
                 var position = GetRandomOffScreenPosition();
                 Instantiate(bomber, position, Quaternion.identity);
                 bomber.playerTarget = playerInput.transform;
+
+                var phaseShift = bomber.GetComponent<PhaseShiftEnemy>();
+                phaseShift.RandomPhase();
             }
         }
 
@@ -137,6 +144,10 @@ namespace SE
                     _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                     _bombers[i].playerTarget = playerInput.transform;
                     //Debug.Log("SPAWNED: " + i + " BOMBERS");
+
+                    var phaseShift = _bombers[i].GetComponent<PhaseShiftEnemy>();
+                    phaseShift.RandomPhase();
+
                     _spawnTimer = _resetSpawnTimer;
                 }
             }
@@ -146,7 +157,7 @@ namespace SE
         /// <summary>
         /// Decide what "phase" Bombers spawn in as
         /// </summary>
-        private void SetBomberPhase()
+        private void LimitBombers()
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {

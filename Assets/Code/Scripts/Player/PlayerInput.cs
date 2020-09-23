@@ -45,6 +45,7 @@ namespace SE
 
             if (Input.GetButtonDown("Fire1"))
             {
+                FindObjectOfType<AudioManager>().Play("PlayerFire");
                 Shooting.Instance.BulletFired();
             }
 

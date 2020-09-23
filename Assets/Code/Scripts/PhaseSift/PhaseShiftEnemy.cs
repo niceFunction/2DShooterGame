@@ -24,10 +24,9 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            //EnemyShiftChange();
+            Debug.Log(transparentState);
         }
         
-        //TODO a
         public void RandomPhase()
         {
             transparentState = Random.value > .5f ? true : false;
@@ -40,23 +39,9 @@ namespace SE
         {
             transparentState = !transparentState;
             //TODO Ensure that the "transparency" layer mask works as intended
+
             gameObject.layer = transparentState ? transparentLayer : solidLayer;
-            enemyTarget.color = transparentState ? solidColor : transparentColor;
-            /*
-            //GameManager.Instance.enemyShiftPhase = Random.Range();
-            if (SE.GameManager.Instance.shiftPhase == 0)
-            {
-                // Use "Light" colors
-                enemyTarget.color = darkTargetColor;
-                gameObject.layer = 8;
-            }
-            else if (SE.GameManager.Instance.shiftPhase == 1)
-            {
-                // "Dark" colors
-                enemyTarget.color = lightTargetColor;
-                gameObject.layer = 9;
-            }
-            */
+            enemyTarget.color = transparentState ? transparentColor : solidColor;
         }
     }
 }

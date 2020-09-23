@@ -6,6 +6,8 @@ namespace SE
 {
     public class GameManager : MonoBehaviour
     {
+        //TODO animation input: Have 2 different animations to switch between
+
         [HideInInspector] public int shiftPhase = 0;
         [HideInInspector] public int enemyShiftPhase;
 
@@ -44,6 +46,13 @@ namespace SE
         /// </summary>
         public void ChangePhase()
         {
+            var enemies = FindObjectsOfType<PhaseShiftEnemy>();
+            
+            foreach(var enemy in enemies)
+            {
+                enemy.EnemyShiftChange();
+            }
+
             if (shiftPhase == 0)
             {
                 //Debug.Log("PhaseShift: " + shiftPhase + " light");

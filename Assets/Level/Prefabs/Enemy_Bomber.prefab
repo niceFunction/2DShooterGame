@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3fab8fc7f7213147b60e3331c2ba7c3, type: 3}
-  m_Color: {r: 0.8088721, g: 0.88235295, b: 0.33333337, a: 1}
+  m_Color: {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 0.36862746}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 924165046761105969}
   - component: {fileID: 7786880072926649702}
   - component: {fileID: 2088334722749912924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_Bomber
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc9dd8d4d6beee46ab1e90c3bcf2a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTarget: {fileID: 4033303259655393084, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
+  playerTarget: {fileID: 0}
   bomberSpeed: 5
   bomberExplosionEffect: {fileID: 6122982147155811734, guid: cdd735a45ab962f4287717cf13d73d13, type: 3}
 --- !u!114 &2088334722749912924
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTarget: {fileID: 7786880071306203281}
   solidColor: {r: 0.7176471, g: 0.08235294, b: 0.2509804, a: 1}
-  transparentColor: {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 0.2784314}
+  transparentColor: {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 0.36862746}
   transparentLayer: 8
   solidLayer: 9
   transparentEnemyAlpha: 1
