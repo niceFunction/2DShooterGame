@@ -65,7 +65,7 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            //LimitBombers(); //TODO Find a way where you can remove Bombers without issues
+            LimitBombers(); //TODO Find a way where you can remove Bombers without issues
 
             if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
             {
@@ -74,7 +74,7 @@ namespace SE
             }
             else if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {
-                //Debug.Log("COROUTINE STOPPED");
+                Debug.Log("COROUTINE STOPPED");
                 StopCoroutine(SpawnBombersOverTime());
             }
         }

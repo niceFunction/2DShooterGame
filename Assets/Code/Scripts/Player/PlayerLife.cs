@@ -23,7 +23,7 @@ namespace SE
         void Update()
         {
             UpdateHealth();
-            GameManager.Instance.lifeField.text = health.ToString();
+            GameManager.Instance.lifeText.text = health.ToString();
         }
 
         public void UpdateHealth()

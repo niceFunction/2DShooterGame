@@ -14,14 +14,18 @@ namespace SE
         public Camera playerCamera;
 
         public PlayerLife playerLife;
-        public TextMeshProUGUI lifeField;
+        public TextMeshProUGUI lifeIcon;
+        public TextMeshProUGUI lifeText;
+        public Color light;
+        public Color dark;
 
         public static GameManager Instance { get; private set; }
 
         // Start is called before the first frame update
         void Start()
         {
-
+            lifeIcon.color = light;
+            lifeText.color = light;
         }
 
         private void Awake()
@@ -60,11 +64,15 @@ namespace SE
             {
                 //Debug.Log("PhaseShift: " + shiftPhase + " light");
                 shiftPhase = 1;
+                lifeIcon.color = dark;
+                lifeText.color = dark;
             }
             else
             {
                 //Debug.Log("PhaseShift: " + shiftPhase + " dark");
                 shiftPhase = 0;
+                lifeIcon.color = light;
+                lifeText.color = light;
             }
         }
     }
