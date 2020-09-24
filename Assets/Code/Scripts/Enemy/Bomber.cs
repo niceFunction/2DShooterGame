@@ -57,7 +57,7 @@ namespace SE
             FindObjectOfType<AudioManager>().Play("EnemyExplosion");
 
             Destroy(gameObject);
-            SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
+            SpawnBombers.Instance.SpawnAnotherBomberOnDeath(this);
         }
 
         private void OnCollisionEnter2D(Collision2D hitInfo)

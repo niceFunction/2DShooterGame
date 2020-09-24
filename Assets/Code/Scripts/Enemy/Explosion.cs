@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    //TODO Explosion 1: Add more depth to the Explosion
+    //TODO Explosion 2: i.e. Explosions can only affect Bombers that are solid
+
     // Start is called before the first frame update
     void Start()
     {
