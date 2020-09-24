@@ -61,7 +61,7 @@ namespace SE
             FindObjectOfType<AudioManager>().Play("EnemyExplosion");
 
             Destroy(gameObject);
-            //SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
+            SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
         }
     }
 }

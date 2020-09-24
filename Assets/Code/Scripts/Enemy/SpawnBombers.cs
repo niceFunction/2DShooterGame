@@ -69,17 +69,13 @@ namespace SE
 
             if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
             {
-                /*
                 Debug.Log("COROUTINE STARTED");
                 StartCoroutine(SpawnBombersOverTime());
-                */
             }
             else if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {
-                /*
                 Debug.Log("COROUTINE STOPPED");
                 StopCoroutine(SpawnBombersOverTime());
-                */
             }
         }
 
@@ -103,7 +99,6 @@ namespace SE
                 _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                 _bombers[i].playerTarget = playerInput.transform;
                 
-                //TODO add this to other places where you create Bombers
                 var phaseShift = _bombers[i].GetComponent<PhaseShiftEnemy>();
                 phaseShift.RandomPhase();
 
@@ -135,11 +130,9 @@ namespace SE
 
             if (_spawnTimer <= 0)
             {
-                //Debug.Log("SPAWNTIMER REACHED 0!");
                 _bombers = new Bomber[_spawnAmount];
                 for (int i = 0; i < Random.Range(0, _spawnAmount); i++)
                 {
-                    //TODO consider if new Bombers should spawn a single or multiple Bomber(s)
                     var position = GetRandomOffScreenPosition();
                     _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                     _bombers[i].playerTarget = playerInput.transform;

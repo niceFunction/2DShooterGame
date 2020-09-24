@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using SE;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -18,9 +20,10 @@ public class PlayerLife : MonoBehaviour
     void Update()
     {
         UpdateHealth();
+        GameManager.Instance.lifeField.text = health.ToString();
     }
 
-    void UpdateHealth()
+    public void UpdateHealth()
     {
         if (health <= 0)
         {
@@ -40,7 +43,6 @@ public class PlayerLife : MonoBehaviour
                 health = 0;
                 Debug.Log("PLAYER IS DEAD!");
             }
-            Debug.Log("Current health: " + health);
         }
     }
 }

@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802b9268894ab0c4c99beaa3cd5a5c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 4375393206421844285}
   maxSpeed: 14
   acceleration: 5.65
   deceleration: 0
@@ -240,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4033303259662932124}
   - component: {fileID: 4033303259662932125}
-  - component: {fileID: 3430160344450375491}
+  - component: {fileID: 4375393206421844285}
   m_Layer: 0
   m_Name: Player_Ship_Right
   m_TagString: Untagged
@@ -313,7 +314,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3430160344450375491
+--- !u!95 &4375393206421844285
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -323,7 +324,7 @@ Animator:
   m_GameObject: {fileID: 4033303259662932123}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c0c497ada5771594cb89e6ab1cefdebe, type: 2}
+  m_Controller: {fileID: 9100000, guid: 63a73135fced4f344b01a266350b6a84, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

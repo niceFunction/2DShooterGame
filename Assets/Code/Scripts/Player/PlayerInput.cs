@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 // SE = Samuel Einheri
@@ -8,6 +9,8 @@ namespace SE
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerInput : MonoBehaviour
     {
+        public Animator animator;
+
         public float maxSpeed;
 
         public float acceleration;
@@ -23,6 +26,7 @@ namespace SE
         private float _shipHorizontal;
         private float _shipVertical;
 
+        private bool _isMoving;
 
         private void Awake()
         {
@@ -36,8 +40,10 @@ namespace SE
 
         private void Update()
         {
-            
+            //var getInput = (_shipInput.x, _shipInput.y);
+
             _shipInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
             if (Input.GetButtonDown("Shift"))
             {
                 SE.GameManager.Instance.ChangePhase();
@@ -47,6 +53,11 @@ namespace SE
             {
                 FindObjectOfType<AudioManager>().Play("PlayerFire");
                 Shooting.Instance.BulletFired();
+                animator.SetBool("playerIsShooting", true);
+            } 
+            else if (Input.GetButtonUp("Fire1"))
+            {
+                animator.SetBool("playerIsShooting", false);
             }
 
         }
@@ -61,6 +72,8 @@ namespace SE
         void MoveShip(Vector2 direction)
         {
             _shipBody.velocity = direction * maxSpeed;
+            animator.SetBool("playerIsMoving", true);
+
         }
 
         void RotateShip()

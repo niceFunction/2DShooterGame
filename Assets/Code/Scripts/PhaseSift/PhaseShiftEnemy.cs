@@ -24,7 +24,7 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(transparentState);
+
         }
         
         public void RandomPhase()
@@ -38,7 +38,6 @@ namespace SE
         public void EnemyShiftChange()
         {
             transparentState = !transparentState;
-            //TODO Ensure that the "transparency" layer mask works as intended
 
             gameObject.layer = transparentState ? transparentLayer : solidLayer;
             enemyTarget.color = transparentState ? transparentColor : solidColor;

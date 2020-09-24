@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace SE
 {
@@ -14,12 +15,15 @@ namespace SE
         public SpriteRenderer playerSprite;
         public Camera playerCamera;
 
+        public PlayerLife playerLife;
+        public TextMeshProUGUI lifeField;
+
         public static GameManager Instance { get; private set; }
 
         // Start is called before the first frame update
         void Start()
         {
-            
+            //playerLife = GetComponent<PlayerLife>();
         }
 
         private void Awake()
@@ -39,6 +43,8 @@ namespace SE
         void Update()
         {
             //Debug.Log(enemyShiftPhase);
+            //lifeField.text = playerLife.health.ToString();
+            playerLife.UpdateHealth();
         }
 
         /// <summary>
