@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6122982147155811729}
   - component: {fileID: 6122982147155811728}
   - component: {fileID: 6122982147155811735}
+  - component: {fileID: 4208450433526708679}
+  - component: {fileID: -7476835122418354458}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -102,3 +104,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4208450433526708679
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122982147155811734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &-7476835122418354458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122982147155811734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ab168d8d65aa5428f295e56fba1f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

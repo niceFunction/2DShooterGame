@@ -5,43 +5,47 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PlayerLife : MonoBehaviour
+
+namespace SE
 {
-    [Tooltip("Player health"), Range(0, 10)]
-    public int health;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerLife : MonoBehaviour
     {
-        
-    }
+        [Tooltip("Player health"), Range(0, 10)]
+        public int health;
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateHealth();
-        GameManager.Instance.lifeField.text = health.ToString();
-    }
-
-    public void UpdateHealth()
-    {
-        if (health <= 0)
+        // Start is called before the first frame update
+        void Start()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D hitInfo)
-    {
-        SE.Bomber enemy = hitInfo.gameObject.GetComponent<SE.Bomber>();
-        if (enemy != null)
+        // Update is called once per frame
+        void Update()
         {
-            Debug.Log("Player has been hit!");
-            health = health - 1;
+            UpdateHealth();
+            GameManager.Instance.lifeField.text = health.ToString();
+        }
+
+        public void UpdateHealth()
+        {
             if (health <= 0)
             {
-                health = 0;
-                Debug.Log("PLAYER IS DEAD!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D hitInfo)
+        {
+            SE.Bomber enemy = hitInfo.gameObject.GetComponent<SE.Bomber>();
+            if (enemy != null)
+            {
+                Debug.Log("Player has been hit!");
+                health = health - 1;
+                if (health <= 0)
+                {
+                    health = 0;
+                    Debug.Log("PLAYER IS DEAD!");
+                }
             }
         }
     }

@@ -69,12 +69,12 @@ namespace SE
 
             if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
             {
-                Debug.Log("COROUTINE STARTED");
+                //Debug.Log("COROUTINE STARTED");
                 StartCoroutine(SpawnBombersOverTime());
             }
             else if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {
-                Debug.Log("COROUTINE STOPPED");
+                //Debug.Log("COROUTINE STOPPED");
                 StopCoroutine(SpawnBombersOverTime());
             }
         }
@@ -150,13 +150,13 @@ namespace SE
         /// <summary>
         /// Decide what "phase" Bombers spawn in as
         /// </summary>
-        private void LimitBombers()
+        public void LimitBombers()
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
             {
                 //Debug.Log("ABOVE MAXIMUM ALLOWED BOMBERS!");
 
-                //Destroy(bomber);
+                Destroy(bomber);
             }
         }
 

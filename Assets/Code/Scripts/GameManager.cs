@@ -7,8 +7,6 @@ namespace SE
 {
     public class GameManager : MonoBehaviour
     {
-        //TODO animation input: Have 2 different animations to switch between
-
         [HideInInspector] public int shiftPhase = 0;
         [HideInInspector] public int enemyShiftPhase;
 
@@ -23,7 +21,7 @@ namespace SE
         // Start is called before the first frame update
         void Start()
         {
-            //playerLife = GetComponent<PlayerLife>();
+
         }
 
         private void Awake()
@@ -42,9 +40,8 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            //Debug.Log(enemyShiftPhase);
-            //lifeField.text = playerLife.health.ToString();
             playerLife.UpdateHealth();
+            SpawnBombers.Instance.LimitBombers();
         }
 
         /// <summary>

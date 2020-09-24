@@ -22,10 +22,6 @@ namespace SE
             
         }
 
-        //TODO What's the transparency? here
-        //TODO Randomize spawn color
-
-
         // Update is called once per frame
         void Update()
         {
@@ -62,6 +58,15 @@ namespace SE
 
             Destroy(gameObject);
             SpawnBombers.Instance.SpawnAnotherBomberOnDeath();
+        }
+
+        private void OnCollisionEnter2D(Collision2D hitInfo)
+        {
+            SE.PlayerInput player = hitInfo.collider.GetComponent<SE.PlayerInput>();
+            if(player != null)
+            {
+                DestroyBomber();
+            }
         }
     }
 }

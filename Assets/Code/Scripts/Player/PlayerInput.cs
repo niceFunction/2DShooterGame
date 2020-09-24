@@ -40,8 +40,6 @@ namespace SE
 
         private void Update()
         {
-            //var getInput = (_shipInput.x, _shipInput.y);
-
             _shipInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
             if (Input.GetButtonDown("Shift"))
@@ -78,7 +76,6 @@ namespace SE
 
         void RotateShip()
         {
-            //_mousePosition = Camera.main.ScreenToWorldPoint(_mousePosition);
             _lookDirection = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
             var angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
