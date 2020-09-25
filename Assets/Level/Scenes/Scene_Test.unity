@@ -997,11 +997,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8018371129523511331, guid: 5a7ce774db54f4840b5402ad3ce023fc, type: 3}
       propertyPath: dark.a
-      value: 1
+      value: 0.29411766
       objectReference: {fileID: 0}
     - target: {fileID: 8018371129523511331, guid: 5a7ce774db54f4840b5402ad3ce023fc, type: 3}
       propertyPath: light.a
-      value: 1
+      value: 0.29411766
       objectReference: {fileID: 0}
     - target: {fileID: 8018371129523511332, guid: 5a7ce774db54f4840b5402ad3ce023fc, type: 3}
       propertyPath: m_LocalPosition.x

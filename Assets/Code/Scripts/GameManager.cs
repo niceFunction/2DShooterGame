@@ -16,8 +16,8 @@ namespace SE
         public PlayerLife playerLife;
         public TextMeshProUGUI lifeIcon;
         public TextMeshProUGUI lifeText;
-        public Color light;
-        public Color dark;
+        public Color lightLife;
+        public Color darkLife;
 
         public static GameManager Instance { get; private set; }
 
