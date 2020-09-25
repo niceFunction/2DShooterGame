@@ -4,7 +4,6 @@ namespace SE
 {
     public class TargetFollow : MonoBehaviour
     {
-
         public Transform followTarget;
         [Range(0f, 1f)]
         public float smoothTime;

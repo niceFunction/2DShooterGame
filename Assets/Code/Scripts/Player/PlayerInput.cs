@@ -9,33 +9,20 @@ namespace SE
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerInput : MonoBehaviour
     {
+        //TODO Make the ship use acceleration instead of "instant" movement
+
         public Animator animator;
 
         public float maxSpeed;
 
-        public float acceleration;
-
-        public float deceleration;
-
         private Rigidbody2D _shipBody;
         [SerializeField] private Vector2 _shipInput;
         
-        private Vector2 _mousePosition;
         private Vector2 _lookDirection;
-
-        private float _shipHorizontal;
-        private float _shipVertical;
-
-        private bool _isMoving;
 
         private void Awake()
         {
             _shipBody = GetComponent<Rigidbody2D>();
-        }
-
-        private void Start()
-        {
-
         }
 
         private void Update()

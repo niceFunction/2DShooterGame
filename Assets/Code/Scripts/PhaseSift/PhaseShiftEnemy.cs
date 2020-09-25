@@ -6,41 +6,33 @@ namespace SE
 {
     public class PhaseShiftEnemy : MonoBehaviour
     {
-
         public SpriteRenderer enemyTarget;
-        //TODO reminder: Have 2 sets of solid/transparent colors & then choose between them
-        //TODO Followup reminder: Meaning, Bombers "chooses" between the 2 (ex: blue or red) & then sets their transparency afterwards
         public Color solidColor;
         public Color transparentColor;
 
-        [SerializeField] private int transparentLayer;
-        [SerializeField] private int solidLayer;
+        [SerializeField] private int _transparentLayer;
+        [SerializeField] private int _solidLayer;
 
-        [Range(0, 1)] public float transparentEnemyAlpha;
-        private float _solidAlpha = 1;
-
-        private bool transparentState;
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        private bool _transparentState;
         
+        /// <summary>
+        /// Randomizes if the Bomber enemy will be "Transparent" or "Solid"
+        /// </summary>
         public void RandomPhase()
         {
-            transparentState = Random.value > .5f ? true : false;
+            _transparentState = Random.value > .5f ? true : false;
             EnemyShiftChange();
         }
+
         /// <summary>
         /// "Shifts" between colors of the Bombers
         /// </summary>
         public void EnemyShiftChange()
         {
-            transparentState = !transparentState;
+            _transparentState = !_transparentState;
 
-            gameObject.layer = transparentState ? transparentLayer : solidLayer;
-            enemyTarget.color = transparentState ? transparentColor : solidColor;
+            gameObject.layer = _transparentState ? _transparentLayer : _solidLayer;
+            enemyTarget.color = _transparentState ? transparentColor : solidColor;
         }
     }
 }

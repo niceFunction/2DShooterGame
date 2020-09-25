@@ -26,19 +26,8 @@ namespace SE
             }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            //FireWeapon();
-            //BulletFired();
-        }
-
         public void FireWeapon()
         {
-            //if (Input.GetButtonDown("Fire1"))
-            //{
-
-            //}
             BulletFired();
         }
 

@@ -5,19 +5,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-
 namespace SE
 {
     public class PlayerLife : MonoBehaviour
     {
         [Tooltip("Player health"), Range(0, 10)]
         public int health;
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
 
         // Update is called once per frame
         void Update()
@@ -26,6 +19,9 @@ namespace SE
             GameManager.Instance.lifeText.text = health.ToString();
         }
 
+        /// <summary>
+        /// Reload scene when player health is zero
+        /// </summary>
         public void UpdateHealth()
         {
             if (health <= 0)
@@ -39,12 +35,10 @@ namespace SE
             SE.Bomber enemy = hitInfo.gameObject.GetComponent<SE.Bomber>();
             if (enemy != null)
             {
-                Debug.Log("Player has been hit!");
                 health = health - 1;
                 if (health <= 0)
                 {
                     health = 0;
-                    Debug.Log("PLAYER IS DEAD!");
                 }
             }
         }

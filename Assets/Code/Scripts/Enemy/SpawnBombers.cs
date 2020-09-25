@@ -7,10 +7,6 @@ namespace SE
 {
     public class SpawnBombers : MonoBehaviour
     {
-
-        //TODO add PhaseShift on everything that's going to change color: Player, Bomber, Bullet, Camera
-        //TODO Call on PhaseShift from here (SpawnBombers)
-
         [Header("Enemy Bomber")]
         public Bomber bomber;
         [Header("Player")]
@@ -66,14 +62,12 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
+            if (_bombersList.Count < _maximumSpawnAmount)
             {
-                //Debug.Log("COROUTINE STARTED");
                 StartCoroutine(SpawnBombersOverTime());
             }
-            else if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
+            else if (_bombersList.Count > _maximumSpawnAmount)
             {
-                Debug.Log("COROUTINE STOPPED");
                 StopCoroutine(SpawnBombersOverTime());
             }
         }
@@ -82,7 +76,6 @@ namespace SE
         {
             #if UNITY_EDITOR
             GUILayout.Label("Bomber length: " + _bombersList.Count.ToString());
-
             #endif
         }
 
@@ -116,6 +109,7 @@ namespace SE
                 return;
 
             _spawnChance = Random.Range(0, 2);
+
             // Makes it so that Bombers don't spawn every single time
             if (_spawnChance < _spawnChanceValue)
             {
@@ -144,7 +138,6 @@ namespace SE
                     var position = GetRandomOffScreenPosition();
                     _bombers[i] = Instantiate(bomber, position, Quaternion.identity);
                     _bombers[i].playerTarget = playerInput.transform;
-                    //Debug.Log("SPAWNED: " + i + " BOMBERS");
 
                     var phaseShift = _bombers[i].GetComponent<PhaseShiftEnemy>();
                     phaseShift.RandomPhase();

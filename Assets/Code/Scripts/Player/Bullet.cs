@@ -7,20 +7,9 @@ namespace SE
 {
     public class Bullet : MonoBehaviour
     {
-
-        private void Start()
-        {
-
-        }
-
         private void Update()
         {
             Destroy(gameObject, 5f);
-        }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-
         }
 
         private void OnTriggerEnter2D(Collider2D hitInfo)

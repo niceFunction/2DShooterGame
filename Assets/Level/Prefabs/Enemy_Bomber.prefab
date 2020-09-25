@@ -232,6 +232,6 @@ MonoBehaviour:
   enemyTarget: {fileID: 7786880071306203281}
   solidColor: {r: 0.7176471, g: 0.08235294, b: 0.2509804, a: 1}
   transparentColor: {r: 0.20392157, g: 0.59607846, b: 0.85882354, a: 0.36862746}
-  transparentLayer: 8
-  solidLayer: 9
+  _transparentLayer: 8
+  _solidLayer: 9
   transparentEnemyAlpha: 1

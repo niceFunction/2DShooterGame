@@ -7,6 +7,9 @@ namespace SE
 {
     public class GameManager : MonoBehaviour
     {
+        //TODO Limit how fast the Player can "active" ChangePhase
+        //TODO Represent the limitation with a GUI bar that moves from the right to the left
+
         [HideInInspector] public int shiftPhase = 0;
         [HideInInspector] public int enemyShiftPhase;
         [HideInInspector] public int killCount;
@@ -89,7 +92,6 @@ namespace SE
 
             if (shiftPhase == 0)
             {
-                //Debug.Log("PhaseShift: " + shiftPhase + " light");
                 shiftPhase = 1;
                 lifeIcon.color = darkLife;
                 lifeText.color = darkLife;
@@ -99,7 +101,6 @@ namespace SE
             }
             else
             {
-                //Debug.Log("PhaseShift: " + shiftPhase + " dark");
                 shiftPhase = 0;
                 lifeIcon.color = lightLife;
                 lifeText.color = lightLife;
