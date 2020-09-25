@@ -9,23 +9,49 @@ namespace SE
     {
         [HideInInspector] public int shiftPhase = 0;
         [HideInInspector] public int enemyShiftPhase;
+        [HideInInspector] public int killCount;
 
+        [Header("Player"), Tooltip("The sprite of the player")]
         public SpriteRenderer playerSprite;
+        [Tooltip("The camera for the player")]
         public Camera playerCamera;
-
+        [Tooltip("Reference for the player's life script")]
         public PlayerLife playerLife;
+
+        [Header("GUI"), Tooltip("The 'icon' that represents the player's life")]
         public TextMeshProUGUI lifeIcon;
+        [Tooltip("The text component that will display amount of life left")]
         public TextMeshProUGUI lifeText;
+        [Tooltip("The 'icon' that represents the player's kill count")]
+        public TextMeshProUGUI killIcon;
+        [Tooltip("The text component that displays the player's kill count")]
+        public TextMeshProUGUI killText;
+        [Tooltip("Colors that changes the visuals of the 'life' text")]
         public Color lightLife;
         public Color darkLife;
+
+        [Header("Border"), Tooltip("The sprite of the 'border'")]
+        public SpriteRenderer borderSprite;
+        public Color lightBorder;
+        public Color darkBorder;
 
         public static GameManager Instance { get; private set; }
 
         // Start is called before the first frame update
         void Start()
         {
-            lifeIcon.color = light;
-            lifeText.color = light;
+            // What the color of the life will be at the start
+            lifeIcon.color = lightLife;
+            lifeText.color = lightLife;
+            killIcon.color = lightLife;
+            killText.color = lightLife;
+
+            killText.text = killCount.ToString();
+            killCount = 0;
+
+            // Starting color of the "border"
+            borderSprite.color = lightBorder;
+
         }
 
         private void Awake()
@@ -45,7 +71,8 @@ namespace SE
         void Update()
         {
             playerLife.UpdateHealth();
-            SpawnBombers.Instance.LimitBombers();
+            Debug.Log(killCount);
+            killText.text = killCount.ToString();
         }
 
         /// <summary>
@@ -64,15 +91,21 @@ namespace SE
             {
                 //Debug.Log("PhaseShift: " + shiftPhase + " light");
                 shiftPhase = 1;
-                lifeIcon.color = dark;
-                lifeText.color = dark;
+                lifeIcon.color = darkLife;
+                lifeText.color = darkLife;
+                killIcon.color = darkLife;
+                killText.color = darkLife;
+                borderSprite.color = darkBorder;
             }
             else
             {
                 //Debug.Log("PhaseShift: " + shiftPhase + " dark");
                 shiftPhase = 0;
-                lifeIcon.color = light;
-                lifeText.color = light;
+                lifeIcon.color = lightLife;
+                lifeText.color = lightLife;
+                killIcon.color = lightLife;
+                killText.color = lightLife;
+                borderSprite.color = lightBorder;
             }
         }
     }

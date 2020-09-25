@@ -66,8 +66,6 @@ namespace SE
         // Update is called once per frame
         void Update()
         {
-            LimitBombers(); //TODO Find a way where you can remove Bombers without issues
-
             if (GameObject.FindGameObjectsWithTag("Enemy").Length < _maximumSpawnAmount)
             {
                 //Debug.Log("COROUTINE STARTED");
@@ -156,19 +154,6 @@ namespace SE
                 }
             }
             yield return new WaitForSeconds(_spawnTimer);
-        }
-
-        /// <summary>
-        /// Decide what "phase" Bombers spawn in as
-        /// </summary>
-        public void LimitBombers()
-        {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length > _maximumSpawnAmount)
-            {
-                //Debug.Log("ABOVE MAXIMUM ALLOWED BOMBERS!");
-
-                
-            }
         }
 
         /// <summary>

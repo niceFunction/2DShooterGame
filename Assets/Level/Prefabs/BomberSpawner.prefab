@@ -48,6 +48,6 @@ MonoBehaviour:
   playerCamera: {fileID: 9209150976334457947, guid: 19d565703c994754498571a1de4bf720, type: 3}
   padding: 15
   _initialSpawnAmount: 50
-  _spawnTimer: 10
+  _spawnTimer: 5
   _spawnAmount: 10
   _maximumSpawnAmount: 60

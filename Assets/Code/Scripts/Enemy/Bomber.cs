@@ -58,6 +58,8 @@ namespace SE
 
             Destroy(gameObject);
             SpawnBombers.Instance.SpawnAnotherBomberOnDeath(this);
+
+            GameManager.Instance.killCount = GameManager.Instance.killCount + 1;
         }
 
         private void OnCollisionEnter2D(Collision2D hitInfo)

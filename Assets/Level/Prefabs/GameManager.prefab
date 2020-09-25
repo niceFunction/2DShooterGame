@@ -47,3 +47,8 @@ MonoBehaviour:
   enemyShiftPhase: 0
   playerSprite: {fileID: 6040217766421259960, guid: ab633cfa9ca6ac04c8807710b1d23104, type: 3}
   playerCamera: {fileID: 9209150976334457947, guid: 19d565703c994754498571a1de4bf720, type: 3}
+  playerLife: {fileID: 0}
+  lifeIcon: {fileID: 0}
+  lifeText: {fileID: 0}
+  lightLife: {r: 0.13333334, g: 0.18431373, b: 0.24313726, a: 0.29411766}
+  darkLife: {r: 0.78431374, g: 0.8392157, b: 0.8980392, a: 0.29411766}
